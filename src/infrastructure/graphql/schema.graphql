@@ -1,0 +1,32 @@
+type Book {
+  title: String
+  author: String
+}
+
+type Query {
+  books: [Book]
+  userWithID(id: ID!): User
+}
+
+type Mutation {
+  updateUserEmail(id: ID!, email: String!): UpdateUserEmailMutationResponse
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+interface MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+}
+
+type UpdateUserEmailMutationResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  user: User
+}

@@ -1,0 +1,28 @@
+mutation UpdateUserEmail {
+  updateUserEmail(id: 7, email: "jhe@email.com") {
+    code
+    message
+    success
+    user {
+      id
+      name
+      email
+    }
+  }
+}
+
+{
+  userWithID(id: 1) {
+    id
+    name
+    email
+  }
+}
+
+{
+  books {
+    id
+    name
+    email
+  }
+}
